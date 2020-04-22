@@ -1,0 +1,6 @@
+framework module CGMeet {
+  umbrella header "CGMeet.h"
+
+  export *
+  module * { export * }
+}
