@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-cg-meet",
+  "version": "0.0.2",
+  "description": "\n       This is plugin for CG Meet calling service!\n    ",
+  "cordova": {
+    "id": "cordova-plugin-cg",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnill/cordova-plugin-cg-meet.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "gaganinvic",
+  "license": "Auris",
+  "bugs": {
+    "url": "https://github.com/mnill/cordova-plugin-cg-meet/issues"
+  },
+  "homepage": "https://github.com/mnill/cordova-plugin-cg-meet#readme"
+}

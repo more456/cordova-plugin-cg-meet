@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id='cordova-plugin-cg' version='1.0.2' xmlns='http://apache.org/cordova/ns/plugins/1.0' xmlns:android='http://schemas.android.com/apk/res/android'>
+	<name>CGPlugin</name>
+	<js-module name='CGPlugin' src='www/CGPlugin.js'>
+		<clobbers target='cgplugin' />
+	</js-module>
+
+
+	<platform name='android'>
+		<config-file parent='/*' target='res/xml/config.xml'>
+			<feature name='CGPlugin'>
+				<param name='android-package' value='com.cordova.plugin.cg.CGPlugin' />
+			</feature>
+		</config-file>
+		<config-file parent='/*' target='AndroidManifest.xml'>
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.BLUETOOTH" />
+			<uses-permission android:name="android.permission.CAMERA" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+			<uses-permission android:name="android.permission.RECORD_AUDIO" />
+			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+			<uses-permission android:name="android.permission.WAKE_LOCK" />
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+		</config-file>
+		<source-file src='src/android/CGPlugin.java' target-dir='src/com/cordova/plugin/cg/' />
+		<framework src='src/android/cgplugin.gradle' custom='true' type='gradleReference' />
+	</platform>
+
+	<!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CGPlugin">
+                <param name="ios-package" value="CGPlugin"/>
+            </feature>
+        </config-file>
+
+		<header-file src="src/ios/CGMeetView.h" />
+		<header-file src="src/ios/CGMeetViewDelegate.h" />
+        <header-file src="src/ios/CGPlugin.h" />
+        <source-file src="src/ios/CGPlugin.mm" />
+
+        <framework src="./framework/CGMeet.framework" custom="true" />
+        <framework src="./framework/WebRTC.framework" custom="true" />
+
+    </platform>
+</plugin>
