@@ -1,9 +1,7 @@
 repositories{
 	jcenter()
 	mavenCentral()
-	flatDir {
-        	dirs '/home/ubuntu/vsts/jrdevcog/samples/cg-meet-root/cg-meet/android/sdk/build/outputs/aar/'
-    	}
+	maven { url "file:/tmp/repo" }
 	maven {
 		url "https://maven.google.com"
 	}
@@ -43,11 +41,12 @@ android {
 }
 dependencies {
 //org.cg.react:cg-meet-sdk:2.+ org.cg.react:cg-meet-sdk:1.9.0@aar
-	compile  (name:'sdk-release', ext:'aar') {
-		transitive = true;
-	}
+//	compile  (name:'sdk-release', ext:'aar') {
+//		transitive = true;
+//	}
 
 	//implementation "com.android.support:appcompat-v7:27.1.0"	
+	implementation ('org.cg.react:cg-meet-sdk:+') { transitive = true }
 	implementation 'androidx.appcompat:appcompat:1.1.0'
     	implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 	//compile  "com.android.support:appcompat-v7:27.1.0"
