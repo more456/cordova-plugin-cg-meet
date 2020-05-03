@@ -2,7 +2,7 @@ repositories{
 	jcenter()
 	mavenCentral()
 	flatDir {
-        	dirs 'aars'
+        	dirs '/home/ubuntu/vsts/jrdevcog/samples/cg-meet-root/cg-meet/android/sdk/build/outputs/aar/'
     	}
 	maven {
 		url "https://maven.google.com"
