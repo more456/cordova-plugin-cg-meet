@@ -50,9 +50,11 @@ public class CGPlugin extends CordovaPlugin implements CGMeetActivityInterface{
     checkPermission();
 
     if (action.equals("loadURL")) {
+      console.log(args);
       String url = args.getString(0);
-      String key = args.getString(1);
-      this.loadURL(url, key, callbackContext);
+     Object options_obj=args.get(1);
+    //  String options_obj = args.getString(1);
+      this.loadURL(url, options_obj, callbackContext);
       return true;
     } else if (action.equals("destroy")) {
       this.destroy(callbackContext);
@@ -102,7 +104,7 @@ public class CGPlugin extends CordovaPlugin implements CGMeetActivityInterface{
     }
   }
 
-  private void loadURL(final String url, final String key, final CallbackContext callbackContext) {
+  private void loadURL(final String url, final Object options_obj, final CallbackContext callbackContext) {
     Log.e(TAG, "loadURL called : "+url);
     
     cordova.getActivity().runOnUiThread(new Runnable() {
@@ -117,11 +119,23 @@ public class CGPlugin extends CordovaPlugin implements CGMeetActivityInterface{
             e.printStackTrace();
             throw new RuntimeException("Invalid server URL!");
         }
-        
+        // options.serverURL = this.serverURL;
+        //     options.room = this.room;
+        //     options.subject = this.subject;
+        //     options.token = this.token;
+        //     options.colorScheme = this.colorScheme;
+        //     options.featureFlags = this.featureFlags;
+        //     options.audioMuted = this.audioMuted;
+        //     options.audioOnly = this.audioOnly;
+        //     options.videoMuted = this.videoMuted;
+        //     options.userInfo = this.userInfo;
         CGMeetConferenceOptions options = new CGMeetConferenceOptions.Builder()          
           .setRoom(url)
-          .setSubject(" ")
-          .setFeatureFlag("chat.enabled", false)
+          .setServerURL(url)
+          .setSubject(options_obj.subject)
+          .setToken(options_obj.token)
+          .setUserInfo(options_obj.userInfo)          
+          .setFeatureFlag("chat.enabled", true)
           .setFeatureFlag("invite.enabled", false)          
           .setFeatureFlag("calendar.enabled", false)
           .setWelcomePageEnabled(false)
