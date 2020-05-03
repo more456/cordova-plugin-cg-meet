@@ -17,7 +17,7 @@ Example of how to select them here: https://github.com/findmate/cordova-plugin-c
 ```
 const roomId = 'your-custom-room-id';
 
-cgplugin.loadURL('https://google.com/' + roomId, roomId, false, function (data) {
+cgplugin.loadURL('https://meet.jit.si/' + roomId, roomId, false, function (data) {
     if (data === "CONFERENCE_WILL_LEAVE") {
         cgplugin.destroy(function (data) {
             // call finished
