@@ -5,7 +5,7 @@ Cordova plugin for CG Meet React Native SDK. Works with both iOS and Android, an
 I created this repo as there were multiple versions of this plugin, one which worked for iOS and Android, but neither worked with both. This verison satisfies the 64bit requirement for Android and also works in iOS and is currently being used in production.
 
 # Installation
-`cordova plugin add https://github.com/findmate/cordova-plugin-cg-meet`
+`cordova plugin add https://github.com/more456/cordova-plugin-cg-meet`
 
 ## iOS Installation
 On iOS/Xcode you will need to manually specify the WebRTC and CGMeet frameworks manually to be embedded.

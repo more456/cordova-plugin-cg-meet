@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-cg-meet",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "\n       This is plugin for CG Meet calling service!\n    ",
   "cordova": {
     "id": "cordova-plugin-cg",
