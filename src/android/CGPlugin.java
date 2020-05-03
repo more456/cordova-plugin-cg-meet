@@ -50,7 +50,7 @@ public class CGPlugin extends CordovaPlugin implements CGMeetActivityInterface{
     checkPermission();
 
     if (action.equals("loadURL")) {
-      console.log(args);
+     // console.log(args);
       String url = args.getString(0);
      Object options_obj=args.get(1);
     //  String options_obj = args.getString(1);
@@ -131,10 +131,10 @@ public class CGPlugin extends CordovaPlugin implements CGMeetActivityInterface{
         //     options.userInfo = this.userInfo;
         CGMeetConferenceOptions options = new CGMeetConferenceOptions.Builder()          
           .setRoom(url)
-          .setServerURL(url)
-          .setSubject(options_obj.subject)
-          .setToken(options_obj.token)
-          .setUserInfo(options_obj.userInfo)          
+       //   .setServerURL(url)
+          // .setSubject(options_obj.subject)
+          // .setToken(options_obj.token)
+          // .setUserInfo(options_obj.userInfo)          
           .setFeatureFlag("chat.enabled", true)
           .setFeatureFlag("invite.enabled", false)          
           .setFeatureFlag("calendar.enabled", false)
